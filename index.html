@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Regalo Sorpresa 🎁</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .regalo {
+            width: 200px;
+            height: 200px;
+            background: #e63946;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .regalo::before,
+        .regalo::after {
+            content: "";
+            position: absolute;
+            background: #fff;
+        }
+
+        .regalo::before {
+            width: 100%;
+            height: 20px;
+            top: 90px;
+        }
+
+        .regalo::after {
+            width: 20px;
+            height: 100%;
+            left: 90px;
+        }
+
+        .mensaje {
+            display: none;
+            text-align: center;
+        }
+
+        .mensaje img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        .abierto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="regalo" onclick="abrirRegalo()" id="regalo"></div>
+
+    <div class="mensaje" id="mensaje">
+        <h2>🎉 ¡Sorpresa! 🎉</h2>
+        <img src="https://via.placeholder.com/300" alt="Imagen sorpresa">
+    </div>
+
+    <script>
+        function abrirRegalo() {
+            document.getElementById("regalo").classList.add("abierto");
+            document.getElementById("mensaje").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
